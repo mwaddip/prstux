@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   inkscape:export-filename="/tmp/splash.png"
+   inkscape:export-filename="/home/v01d/coding/prstux/boot/splash/splash.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="splash.svg">
@@ -63,7 +63,9 @@
     <g
        transform="matrix(0,-1,1,0,1040.5422,519.26317)"
        id="layer1-3"
-       inkscape:label="Calque 1">
+       inkscape:label="Calque 1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <circle
          r="0"
          cx="-453.55847"
@@ -106,7 +108,9 @@
        y="667.44696"
        id="text3490"
        sodipodi:linespacing="125%"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
+       transform="matrix(0,-1,1,0,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3492"
          x="-1006.2601"
@@ -118,6 +122,8 @@
        height="216.75189"
        x="803.40729"
        y="829.35669"
-       style="fill:none;stroke:#000000;stroke-width:0.954808" />
+       style="fill:none;stroke:#000000;stroke-width:0.954808"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>
