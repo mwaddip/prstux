@@ -1,0 +1,10 @@
+stdin=serial
+stdout=serial
+stderr=serial
+ethact=FEC0
+loadaddr=0x70800000
+loadaddr_ramdisk=0x70C00000
+bootdev=2
+rawtable=0xF40000
+bootcmd=mmc read 2 ${loadaddr} 0x800 0x1400;bootm ${loadaddr}
+bootargs=root=/dev/mmcblk0p2 rootfstype=ext4 rw rootwait init=/sbin/init bootdev=2 rawtable=0xF40000 

@@ -1,0 +1,3 @@
+[submodule "boot/mkubootenv"]
+	path = boot/mkubootenv
+	url = https://github.com/tklauser/mkubootenv

@@ -1,0 +1,42 @@
+#!/bin/sh 
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# ensure USB networking is up in case anything below fails and we're locked out
+ifconfig usb0 192.168.101.1 pointopoint 192.168.101.2
+
+# startup koreader, if it is installed
+if [ -d /root/koreader ]; then
+  cd /root/koreader
+  ./reader.lua &
+fi
+
+# load improved Sony's E-INK functionality
+/sbin/insmod /system/epd/sp1.ko
+
+# load WiFi
+/sbin/insmod /system/wifi/ar6000.ko
+sleep 1
+/sbin/wpa_supplicant -B -i wlan0 -D wext -C /var/run/wpa_supplicant -f /var/log/wpa_supplicant.log 
+/sbin/ifconfig wlan0 down # start disabled
+
+# For battery saving, adapt clock to load
+echo conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+# Some settings taken from Android init
+echo 1 > /sys/devices/platform/mxc_dvfs_core.0/enable
+echo 1 > /sys/devices/platform/busfreq.0/enable
+
+# Disable flashing LED
+echo 0 > /sys/devices/platform/leds_pwm.0/leds/mxc_pwm/brightness
+
+exit 0
