@@ -6,13 +6,7 @@ RUN apt update -y && apt install -y kmod vim iproute2 net-tools ifupdown wireles
 RUN apt install -y wpasupplicant file inetutils-ping less
 
 # configs
-COPY configs/etc/fstab /etc/fstab
-COPY configs/etc/modules /etc/modules
-COPY configs/etc/modprobe.d/g_multi.conf /etc/modprobe.d/g_multi.conf
-COPY configs/etc/inittab /etc/inittab
-COPY configs/etc/securetty /etc/securetty
-COPY configs/etc/network/interfaces /etc/network/interfaces
-COPY configs/etc/rc.local /etc/rc.local
+COPY configs/etc/ /etc/
 
 # set options
 RUN bash -c 'echo root:root | chpasswd'
