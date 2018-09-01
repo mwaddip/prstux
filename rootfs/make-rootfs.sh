@@ -27,10 +27,10 @@ sudo mknod dev/mmcblk0p2 b 179 2
 
 sudo mknod dev/fb0 c 29 0
 
-sudo mkdir input
-sudo mknod input/event0 c 13 64
-sudo mknod input/event1 c 13 65
-sudo mknod input/event2 c 13 66
+sudo mkdir dev/input
+sudo mknod dev/input/event0 c 13 64
+sudo mknod dev/input/event1 c 13 65
+sudo mknod dev/input/event2 c 13 66
 
 # remove qemu binary for final root
 sudo rm -f usr/bin/qemu-arm-static
