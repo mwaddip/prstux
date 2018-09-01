@@ -32,6 +32,11 @@ sudo mknod dev/input/event0 c 13 64
 sudo mknod dev/input/event1 c 13 65
 sudo mknod dev/input/event2 c 13 66
 
+# we're using RTC1, since it appears to be made for Sony eReader, but I'm not really sure of the difference between both
+sudo ln -s /dev/rtc1 /dev/rtc
+sudo mknod dev/rtc0 c 254 0
+sudo mknod dev/rtc1 c 254 1
+
 # remove qemu binary for final root
 sudo rm -f usr/bin/qemu-arm-static
 
