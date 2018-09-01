@@ -1,0 +1,20 @@
+This binary was compiled from Atheros 6k sources without modifications. Original license:
+
+/*
+ * Copyright (c) 2004-2009 Atheros Communications Inc.
+ * All rights reserved.
+ * 
+ * 
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License version 2 as
+// published by the Free Software Foundation;
+//
+// Software distributed under the License is distributed on an "AS
+// IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+// implied. See the License for the specific language governing
+// rights and limitations under the License.
+
+It is easier for me to distribute this binary than to include the build as part of prstux.
+You can download the original source from here: 
+
+http://oss.sony.net/Products/Linux/Audio/Download/common/bp6noJ8X2fHFULBV2PuC5A/AR6kSDK.build_3.1_RC.8_120710_gpl.tgz

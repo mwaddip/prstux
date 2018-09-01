@@ -2,6 +2,8 @@
 # /etc/fstab: static file system information.
 #
 # file system   mount       type    options           dump    pass
+/dev/mmcblk0p2  /mnt/data   ext4    defaults          0       0
+/dev/mmcblk2p10 /system     ext4    defaults,ro       0       0 
 proc            /proc       proc    defaults          0       0
 devpts          /dev/pts    devpts  gid=5,mode=620    0       0
 sysfs           /sys        sysfs   defaults          0       0

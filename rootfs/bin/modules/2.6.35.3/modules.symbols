@@ -1,0 +1,3 @@
+# Aliases for symbols, used by symbol_request().
+alias symbol:usb_gadget_register_driver arcotg_udc
+alias symbol:usb_gadget_unregister_driver arcotg_udc

@@ -5,6 +5,10 @@ COPY configs/etc/apt/sources.list /etc/apt/sources.list
 RUN apt update -y && apt install -y kmod vim iproute2 net-tools ifupdown wireless-tools netbase
 RUN apt install -y wpasupplicant file inetutils-ping less
 
+# create mount points
+RUN mkdir /mnt/data
+RUN mkdir /system
+
 # configs
 COPY configs/etc/ /etc/
 
@@ -16,4 +20,4 @@ RUN touch /etc/PRSTUX
 
 # binaries
 COPY bin/modules /lib/modules
-COPY bin/system /system 
+COPY bin/wmiconfig/wmiconfig /usr/sbin/wmiconfig
