@@ -33,7 +33,7 @@ sudo mknod dev/input/event1 c 13 65
 sudo mknod dev/input/event2 c 13 66
 
 # we're using RTC1, since it appears to be made for Sony eReader, but I'm not really sure of the difference between both
-sudo ln -s /dev/rtc1 /dev/rtc
+sudo ln -s dev/rtc1 dev/rtc
 sudo mknod dev/rtc0 c 254 0
 sudo mknod dev/rtc1 c 254 1
 
@@ -43,6 +43,6 @@ sudo rm -f usr/bin/qemu-arm-static
 cd ..
 
 # compress into final tar
-sudo tar -f final_root.tar -C final_root -c .
+sudo tar -C final_root -c . > final_root.tar
 sudo rm -rf final_root
 
