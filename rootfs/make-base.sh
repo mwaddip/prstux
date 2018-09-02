@@ -13,4 +13,5 @@ if [ "$(docker images -q prstux-base)" = "" ]; then
   sudo rm -rf rootfs/
 else
   echo "prstux-base docker image already exists. use make clean_base to remove if you want to rebuild it"
+  exit 0
 fi
