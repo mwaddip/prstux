@@ -1,4 +1,4 @@
-![](https://gitlab.com/phreakuencies/prstux/raw/master/boot/splash/logo.svg)
+![](https://gitlab.com/phreakuencies/prstux/raw/master/boot/splash/logo.png)
 
 # PRSTUX
 
