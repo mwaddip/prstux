@@ -1,4 +1,4 @@
-![](boot/splash/logo.svg)
+![](boot/splash/logo.png)
 
 # PRSTUX
 
