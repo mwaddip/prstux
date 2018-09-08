@@ -27,7 +27,6 @@ fi
 /sbin/insmod /system/wifi/ar6000.ko
 sleep 1
 /sbin/ifconfig wlan0 up
-/sbin/wpa_supplicant -B -i wlan0 -D wext -C /var/run/wpa_supplicant -f /var/log/wpa_supplicant.log 
 
 # disable wlan for now
 /usr/sbin/wmiconfig -i wlan0 --wlan disable

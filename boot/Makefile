@@ -1,31 +1,34 @@
-all: bootenv splash
+.PHONY: clean flash
 
-bootenv: boot-env.txt 
+DEVICE ?=
+
+all: bootenv
+
+mkubootenv/mkubootenv:
 	$(MAKE) -C mkubootenv
+
+# boot environment creation
+bootenv: boot-env.txt mkubootenv/mkubootenv
 	mkubootenv/mkubootenv -s 131072 boot-env.txt bootenv
 
-.PHONY: splash clean flash
-splash:
-	$(MAKE) -C splash
-
-FLASH_DEVICE ?=
-flash:
-ifeq ($(FLASH_DEVICE),)
-	@echo Please specify target device with the FLASH_DEVICE variable
+# backup of boot environment
+bootenv.bak: 
+ifeq ($(DEVICE),)
+	@echo Please specify target device with the DEVICE variable
 else
-ifeq ("$(wildcard bootenv.bak)","")
 	@echo Backing up current bootenv
-	../scripts/extract_normal_bootenv.sh $(FLASH_DEVICE) > bootenv.bak
-	@echo Flashing...
-	../scripts/flash_normal_bootenv.sh $(FLASH_DEVICE)
-	@echo Done.
-	
-	$(MAKE) -C splash flash
-else
-	@echo "Error: backup already exists, aborting"
+	../scripts/extract_normal_bootenv.sh $(DEVICE) > bootenv.bak
 endif
+
+# boot environment and splash image flashing
+flash: bootenv bootenv.bak
+ifeq ($(DEVICE),)
+	@echo Please specify target device with the DEVICE variable
+else
+	@echo Flashing...
+	../scripts/flash_normal_bootenv.sh $(DEVICE)
+	@echo Done.
 endif
 
 clean:
 	rm -f bootenv
-	$(MAKE) -C splash clean

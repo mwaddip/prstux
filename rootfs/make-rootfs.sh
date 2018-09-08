@@ -40,6 +40,9 @@ sudo mknod dev/rtc1 c 254 1
 # remove qemu binary for final root
 sudo rm -f usr/bin/qemu-arm-static
 
+# extract koreader into /root
+sudo unzip -d root/ ../koreader-sony-prstux-*.zip
+
 cd ..
 
 # compress into final tar
